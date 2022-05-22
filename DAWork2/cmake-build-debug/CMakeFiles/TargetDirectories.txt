@@ -1,3 +1,0 @@
-C:/Users/frant/OneDrive/Ambiente de Trabalho/DAWork2/cmake-build-debug/CMakeFiles/DAWork2.dir
-C:/Users/frant/OneDrive/Ambiente de Trabalho/DAWork2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/frant/OneDrive/Ambiente de Trabalho/DAWork2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
