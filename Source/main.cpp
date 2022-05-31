@@ -9,14 +9,14 @@ int main() {
     Reader myReader;
     std::string filename;
     std::vector<Travel> travels;
-    Manager manager;
+
 
     std::cout  << std::endl << std::endl << std::endl << std::endl
                << std::endl << "Testing max group dimension" << std::endl;
 
     filename = "../Data/in02.txt";
     travels = myReader.readTravelInfo(filename);
-
+    Manager manager(travels);
 
     //manager.MaxDimension(travels);
 

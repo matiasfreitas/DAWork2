@@ -3,7 +3,6 @@
 //
 
 #include "Manager.h"
-#include "Travel.h"
 
 bool Manager::TravelOriginSorter(Travel travel1, Travel travel2) {
     return travel1.getOrigin() < travel2.getOrigin() && travel1.getDestination() < travel2.getDestination();
@@ -112,10 +111,16 @@ Manager::Manager(std::vector<Travel> myTravelList) :myTravelList(myTravelList){
     for (auto travel: myTravelList) {
         mySpotsList.insert(Spots(travel.getDestination()));
         mySpotsList.insert(Spots(travel.getOrigin()));
-        mySpotsList.find(Spots(travel.getDestination()))->addPath(travel);
-        mySpotsList.find(Spots(travel.getOrigin()))_>addPath(travel);
-
     }
+    for (auto spot: mySpotsList) {
+        for (auto travel: myTravelList) {
+            if (travel.getOrigin() == spot.getLocation()){
+                spot.addPath(travel);
+            }
+        }
+    }
+
+
 
 }
 

@@ -8,8 +8,8 @@ Spots::Spots(int location): location(location), paths({}) {
 
 }
 
-void Spots::addPath(Travel &newPath){
-    this->paths.push_back(newPath);
+void Spots::addPath(Travel newPath){
+    paths.insert(newPath);
 
 }
 
@@ -19,5 +19,25 @@ bool Spots::operator==(const Spots &rhs) const {
 
 bool Spots::operator!=(const Spots &rhs) const {
     return !(rhs == *this);
+}
+
+int Spots::getLocation() const {
+    return location;
+}
+
+bool Spots::operator<(const Spots &rhs) const {
+    return location < rhs.location;
+}
+
+bool Spots::operator>(const Spots &rhs) const {
+    return rhs < *this;
+}
+
+bool Spots::operator<=(const Spots &rhs) const {
+    return !(rhs < *this);
+}
+
+bool Spots::operator>=(const Spots &rhs) const {
+    return !(*this < rhs);
 }
 
