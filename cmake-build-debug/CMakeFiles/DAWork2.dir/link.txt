@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/DAWork2.dir/Source/main.cpp.o CMakeFiles/DAWork2.dir/Source/Reader.cpp.o CMakeFiles/DAWork2.dir/Source/Travels.cpp.o CMakeFiles/DAWork2.dir/Source/Manager.cpp.o -o DAWork2 

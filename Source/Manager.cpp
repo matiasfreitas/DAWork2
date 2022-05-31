@@ -37,7 +37,7 @@ void Manager::MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int e
     std::sort(myTravelList.begin(), myTravelList.end(), TravelOriginSorter);
     bool finished;
 
-    int ntrans = -1;
+    int ntrans = 0;
 
     there:
     int caminho = start;
@@ -87,12 +87,12 @@ void Manager::MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int e
 
     end:
     if(finished) {
-
+/*
         for (int i = 0; i < myTravelList.size(); i++) {
             if (myTravelList[i].getUsed()) {
                 ntrans++;
             }
-        }
+        }*/
 
         std::cout << " A viagem com o menor numero de transbordos " << ntrans << std::endl;
         for (int i = 0; i < myTravelList.size(); i++) {

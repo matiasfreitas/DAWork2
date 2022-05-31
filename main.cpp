@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../Source/Travels.h"
-#include "../Source/Reader.h"
-#include "../Source/Manager.h"
+#include "Source/Travels.h"
+#include "Source/Reader.h"
+#include "Source/Manager.h"
 
 
 int main() {
