@@ -1,3 +1,3 @@
 # DAWork2
 
-Instruções para correr o programa
+Francisco Teixeira, Guilherme Carvalho, Matias Vaz

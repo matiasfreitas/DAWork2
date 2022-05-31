@@ -16,6 +16,7 @@ public:
     bool static TravelOriginSorter(Travel travel1, Travel travel2);
     // void resetCouriers(std::vector<Courier> &myCourierList);
 
+    void MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int ending);
 
 };
 

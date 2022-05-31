@@ -1,20 +1,17 @@
 //
 // Created by frant on 22/05/2022.
 //
-#include <iostream>
-#include <vector>
-#include <ostream>
-#include "Reader.h"
-#include "Travels.h"
 
+#include "Reader.h"
 
 std::vector<Travel> Reader::readTravelInfo(std::string filename, char delimeter) {
     std::vector<Travel> myTravels;
     std::ifstream my_file;
 
     my_file.open(filename, std::ios::in);
-    if (!my_file) std::cout << "File not exists!" << std::endl;
-    else if (my_file.eof()) {
+    if (!my_file) {
+        std::cout << "File not exists!" << std::endl;
+    } else if (my_file.eof()) {
        std::cout << "File is empty" << std::endl;
     } else {
         std::cout << "Reading file" << std::endl;
@@ -26,19 +23,16 @@ std::vector<Travel> Reader::readTravelInfo(std::string filename, char delimeter)
         std::string duration;
 
         std::string header;
-        std::getline(my_file, header, delimeter);
-        std::getline(my_file, header, delimeter);
-        std::getline(my_file, header, delimeter);
+        std::getline(my_file, header, ' ');
         std::getline(my_file, header, '\n');
 
         while (!my_file.eof()) {
-
-            std::getline(my_file, origin, delimeter);
-            std::getline(my_file, destination, delimeter);
-            std::getline(my_file, capacity, delimeter);
+            std::getline(my_file, origin, ' ');
+            std::getline(my_file, destination, ' ');
+            std::getline(my_file, capacity, ' ');
             std::getline(my_file, duration, '\n');
 
-            myTravel = Travel(std::stoi(origin), std::stoi(destination), std::stoi(capacity), std::stoi(duration));
+            myTravel = Travel(std::stoi(origin), std::stoi(destination), std::stoi(capacity), std::stoi(duration), false, false);
             myTravels.push_back(myTravel);
         }
     }

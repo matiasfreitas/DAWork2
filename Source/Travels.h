@@ -1,23 +1,17 @@
 //
 // Created by frant on 22/05/2022.
 //
-#include <ostream>
-#ifndef DAWork2_TRAVELS_H
-#define DAWork2_TRAVELS_H
 
+#ifndef TRAVEL
+#define TRAVEL
+
+#include <ostream>
 
 class Travel {
 public:
-    Travel(int origin, int destination, int capacity, int duration);
+    Travel(int origin, int destination, int capacity, int duration, bool used, bool blocked);
+
     Travel();
-
-    int getorigin() const;
-
-    int getdestination() const;
-
-    int getcapacity() const;
-
-    int getduration() const;
 
     bool operator==(const Travel &rhs) const;
 
@@ -33,6 +27,26 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Travel &aTravel);
 
+    int getOrigin() const;
+
+    int getDestination() const;
+
+    int getCapacity() const;
+
+    int getDuration() const;
+
+    bool getUsed() const;
+
+    void sended();
+
+    void reset();
+
+    bool getBlock() const;
+
+    void block();
+
+    void unblock();
+
 
 private:
     int origin;
@@ -43,6 +57,10 @@ private:
 
     int duration;
 
+    bool used;
+
+    bool blocked;
+
 };
 
-#endif //DAWork2_TRAVELS_H
+#endif //TRAVEL

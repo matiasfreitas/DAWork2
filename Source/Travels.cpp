@@ -4,7 +4,8 @@
 
 #include "Travels.h"
 
-Travel::Travel(int origin, int destination, int capacity, int duration): origin(origin), destination(destination),capacity(capacity), duration(duration){}
+Travel::Travel(int origin, int destination, int capacity, int duration, bool used, bool blocked) : origin(origin), destination(destination),
+                                                                         capacity(capacity), duration(duration), used(used), blocked(blocked){}
 
 Travel::Travel() {}
 
@@ -76,19 +77,43 @@ std::ostream &operator<<(std::ostream &os, const Travel &aTravel) {
 
 
 
-int Travel::getorigin() const {
+int Travel::getOrigin() const {
     return origin;
 }
 
-int Travel::getdestination() const {
+int Travel::getDestination() const {
     return destination;
 }
 
-int Travel::getcapacity() const {
+int Travel::getCapacity() const {
     return capacity;
 }
 
-int Travel::getduration() const {
+int Travel::getDuration() const {
     return duration;
 }
 
+
+bool Travel::getUsed() const{
+    return used;
+}
+
+void Travel::sended(){
+    Travel::used = true;
+}
+
+void Travel::reset(){
+    Travel::used = false;
+}
+
+bool Travel::getBlock() const{
+    return  blocked;
+}
+
+void Travel::block(){
+    Travel::blocked = true;
+}
+
+void Travel::unblock() {
+    Travel::blocked = false;
+}
