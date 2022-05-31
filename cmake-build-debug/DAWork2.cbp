@@ -8,102 +8,106 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/guilherme/CLionProjects/DAWork2/cmake-build-debug"/>
+				<Option working_dir="/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="DAWork2">
-				<Option output="/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/DAWork2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/guilherme/CLionProjects/DAWork2/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 DAWork2"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="DAWork2/fast">
-				<Option output="/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/DAWork2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/guilherme/CLionProjects/DAWork2/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 DAWork2/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/guilherme/CLionProjects/DAWork2/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/guilherme/CLionProjects/DAWork2/cmake-build-debug"/>
+				<Option working_dir="/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/guilherme/CLionProjects/DAWork2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DAWork2">
+				<Option output="/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/DAWork2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 DAWork2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DAWork2/fast">
+				<Option output="/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/DAWork2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 DAWork2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/guilherme/CLionProjects/DAWork2/Source/Manager.cpp">
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/Source/Manager.cpp">
 			<Option target="DAWork2"/>
 		</Unit>
-		<Unit filename="/home/guilherme/CLionProjects/DAWork2/Source/Manager.h">
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/Source/Manager.h">
 			<Option target="DAWork2"/>
 		</Unit>
-		<Unit filename="/home/guilherme/CLionProjects/DAWork2/Source/Reader.cpp">
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/Source/Reader.cpp">
 			<Option target="DAWork2"/>
 		</Unit>
-		<Unit filename="/home/guilherme/CLionProjects/DAWork2/Source/Reader.h">
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/Source/Reader.h">
 			<Option target="DAWork2"/>
 		</Unit>
-		<Unit filename="/home/guilherme/CLionProjects/DAWork2/Source/Travels.cpp">
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/Source/Spots.cpp">
 			<Option target="DAWork2"/>
 		</Unit>
-		<Unit filename="/home/guilherme/CLionProjects/DAWork2/Source/Travels.h">
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/Source/Spots.h">
 			<Option target="DAWork2"/>
 		</Unit>
-		<Unit filename="/home/guilherme/CLionProjects/DAWork2/Source/main.cpp">
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/Source/Travel.cpp">
 			<Option target="DAWork2"/>
 		</Unit>
-		<Unit filename="/home/guilherme/CLionProjects/DAWork2/CMakeLists.txt">
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/Source/Travel.h">
+			<Option target="DAWork2"/>
+		</Unit>
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/Source/main.cpp">
+			<Option target="DAWork2"/>
+		</Unit>
+		<Unit filename="/Users/matiasfg/Documents/DAWork2.2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

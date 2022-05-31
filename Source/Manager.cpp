@@ -3,7 +3,7 @@
 //
 
 #include "Manager.h"
-#include "Travels.h"
+#include "Travel.h"
 
 bool Manager::TravelOriginSorter(Travel travel1, Travel travel2) {
     return travel1.getOrigin() < travel2.getOrigin() && travel1.getDestination() < travel2.getDestination();
@@ -45,7 +45,7 @@ void Manager::MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int e
     int skiped = 0;
     for (int i = 0; i < myTravelList.size(); i++){
 
-            if(myTravelList[i].getOrigin() == caminho && !myTravelList[i].getUsed() && myTravelList[i].getCapacity() >= cap && !myTravelList[i].getBlock()) {
+            if(myTravelList[i].isViablePathTo(caminho, cap)) {
                 while(myTravelList[i].getOrigin() == caminho) {
                     if(myTravelList[i].getDestination() == ending) {
                         myTravelList[i].sended();
@@ -58,7 +58,7 @@ void Manager::MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int e
                 i -= skiped;
             }
 
-            if(myTravelList[i].getOrigin() == caminho && !myTravelList[i].getUsed() && myTravelList[i].getCapacity() >= cap && !myTravelList[i].getBlock()) {
+            if(myTravelList[i].isViablePathTo(caminho, cap)) {
             caminho = myTravelList[i].getDestination();
             myTravelList[i].sended();
 
@@ -106,5 +106,16 @@ void Manager::MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int e
     }else {
         std::cout << "Não existe um caminho" << std::endl;
     }
+}
+
+Manager::Manager(std::vector<Travel> myTravelList) :myTravelList(myTravelList){
+    for (auto travel: myTravelList) {
+        mySpotsList.insert(Spots(travel.getDestination()));
+        mySpotsList.insert(Spots(travel.getOrigin()));
+        mySpotsList.find(Spots(travel.getDestination()))->addPath(travel);
+        mySpotsList.find(Spots(travel.getOrigin()))_>addPath(travel);
+
+    }
+
 }
 

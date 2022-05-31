@@ -1,4 +1,4 @@
-/snap/clion/190/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/guilherme/CLionProjects/DAWork2 -B /home/guilherme/CLionProjects/DAWork2/cmake-build-debug
+"/Users/matiasfg/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.5744.254/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/matiasfg/Documents/DAWork2.2
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/guilherme/CLionProjects/DAWork2/cmake-build-debug
+-- Build files have been written to: /Users/matiasfg/Documents/DAWork2.2/cmake-build-debug

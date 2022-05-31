@@ -6,7 +6,7 @@
 #define READER
 
 #include <vector>
-#include "Travels.h"
+#include "Travel.h"
 #include <iostream>
 #include <fstream>
 

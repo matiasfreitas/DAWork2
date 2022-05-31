@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Source/Travels.h"
+#include "Source/Travel.h"
 #include "Source/Reader.h"
 #include "Source/Manager.h"
 
