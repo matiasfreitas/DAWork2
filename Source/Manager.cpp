@@ -32,81 +32,30 @@ void Manager::MaxDimension(std::vector<Travel> &myTravelList){
 
 
 
-void Manager::MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int ending){
-    std::sort(myTravelList.begin(), myTravelList.end(), TravelOriginSorter);
-    bool finished;
-
-    int ntrans = 0;
-
-    there:
-    int caminho = start;
-    int cap = 0;
-    int skiped = 0;
-    for (int i = 0; i < myTravelList.size(); i++){
-
-            if(myTravelList[i].isViablePathTo(caminho, cap)) {
-                while(myTravelList[i].getOrigin() == caminho) {
-                    if(myTravelList[i].getDestination() == ending) {
-                        myTravelList[i].sended();
-                        finished = true;
-                        goto end;
-                    }
-                    i++;
-                    skiped++;
-                }
-                i -= skiped;
-            }
-
-            if(myTravelList[i].isViablePathTo(caminho, cap)) {
-            caminho = myTravelList[i].getDestination();
-            myTravelList[i].sended();
-
-            if(myTravelList[i].getDestination() == ending) {
-                finished = true;
-                break;
-            }
-        }
-
-        if(myTravelList[i].getOrigin() == start && myTravelList[i].getUsed() && !myTravelList[i].getBlock()) {
-            cap = myTravelList[i].getCapacity();
-        }
-    }
-
-    if(!finished) {
-            for (int i = 0; i < myTravelList.size(); i++) {
-                if (myTravelList[i].getUsed()) {
-                    myTravelList[i].block();
-                    myTravelList[i].reset();
-                }
-            }
-        goto there;
-    }
+void Manager::MaxDimMinTrans(int start, int ending){
 
 
+    auto spotStart = mySpotsList.find(Spots(start));
+    std::vector<Spots> visited = {};
 
-    end:
-    if(finished) {
-/*
-        for (int i = 0; i < myTravelList.size(); i++) {
-            if (myTravelList[i].getUsed()) {
-                ntrans++;
-            }
-        }*/
+    std::vector<Travel> paths = minPath(spotStart, ending, visited); //distance vector
 
-        std::cout << " A viagem com o menor numero de transbordos " << ntrans << std::endl;
-        for (int i = 0; i < myTravelList.size(); i++) {
-            if (myTravelList[i].getUsed()) {
-                std::cout << myTravelList[i].getOrigin()
-                          << " " << myTravelList[i].getDestination()
-                          << " " << myTravelList[i].getCapacity()
-                          << " " << myTravelList[i].getDuration() << std::endl;
-            }
-        }
-    }else {
-        std::cout << "Não existe um caminho" << std::endl;
-    }
 }
+std::vector<Travel>  Manager::minPath(Spots spotStart, int ending, std::vector<Spots> visited){
+    visited.push_back(spotStart);
+    if(spotStart.getLocation() == ending){
+        return visited;
+    }
+    else {
+        for (auto path: spotStart.getPaths()) {
+            auto spotNext = mySpotsList.find(Spots(path.getDestination()));
+            std::vector<Travel> paths = minPath(spotNext, ending, visited);
 
+        }
+    }
+
+
+}
 Manager::Manager(std::vector<Travel> myTravelList) :myTravelList(myTravelList){
     for (auto travel: myTravelList) {
         mySpotsList.insert(Spots(travel.getDestination()));

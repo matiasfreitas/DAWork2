@@ -21,6 +21,7 @@ public:
 
     void MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int ending);
     Manager(std::vector<Travel> myTravelList);
+    minPath(Spots spotStsrt, int ending, std::vectorSpots> visited);
 
 private:
     std::vector<Travel> myTravelList;

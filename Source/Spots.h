@@ -17,9 +17,6 @@ public:
 
     bool operator!=(const Spots &rhs) const;
 
-private:
-    int location;
-public:
     int getLocation() const;
 
     bool operator<(const Spots &rhs) const;
@@ -30,7 +27,10 @@ public:
 
     bool operator>=(const Spots &rhs) const;
 
+    const std::set<Travel> &getPaths() const;
+
 private:
+    int location;
     std::set<Travel> paths;
 };
 

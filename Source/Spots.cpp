@@ -41,3 +41,7 @@ bool Spots::operator>=(const Spots &rhs) const {
     return !(*this < rhs);
 }
 
+const std::set<Travel> &Spots::getPaths() const {
+    return paths;
+}
+
