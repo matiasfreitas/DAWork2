@@ -2,6 +2,7 @@
 // Created by frant on 22/05/2022.
 //
 
+#include <list>
 #include "Manager.h"
 
 bool Manager::TravelOriginSorter(Travel travel1, Travel travel2) {
@@ -9,67 +10,69 @@ bool Manager::TravelOriginSorter(Travel travel1, Travel travel2) {
 }
 
 
-void Manager::MaxDimension(std::vector<Travel> &myTravelList){
-    std::sort(myTravelList.begin(), myTravelList.end());
-    int maxcap = 0;
-    int position;
+void Manager::MaxDimension(Spots start, Spots ending){
+    start = *std::find(mySpotsList.begin(), mySpotsList.end(), start);
+    std::map<Spots, std::tuple<Spots, int>> pathFlow; // pat
+    std::deque<std::tuple<int, Spots>> myQueue;
 
-    for (int i = 0; i < myTravelList.size(); i++) {
-        if(myTravelList[i].getCapacity() > maxcap){
-            maxcap = myTravelList[i].getCapacity();
-            position = i;
+    for (const auto spot: mySpotsList) {
+        pathFlow.insert({spot, {NULL,0}});
+    }
+    myQueue.push_back({INT32_MAX, start});
+    pathFlow[start] = {NULL, INT32_MAX};
+    std::tuple<int, Spots> nextVertice;
+    int flow;
+    while(!myQueue.empty()){
+        nextVertice = myQueue.front();
+        myQueue.pop_front();
+        std::cout << std::get<0>(nextVertice) << " " << std::endl;
+        for (auto path: std::get<1>(nextVertice).getPaths()) {
+            //if capacity of path is greater than capacity on pathflow (max flow in that interaction) of the destination of the pat
+            // and capacity of path is greater than capacity on pathflow (max flow in that interaction) of the destination of the pat
+            std::cout << path.getCapacity() << " " << std::get<1>(pathFlow[path.getDestination()]) << " "
+                      << std::get<0>(nextVertice) << std::endl;
+            if (path.getCapacity() > std::get<1>(pathFlow[path.getDestination()]) &&
+                std::get<0>(nextVertice) > std::get<1>(pathFlow[path.getDestination()])) {
+            pathFlow[path.getDestination()] = {std::get<1>(nextVertice),
+                                               std::min(path.getCapacity(), std::get<0>(nextVertice))};
+            }
+            myQueue.push_back({std::min(path.getCapacity(), std::get<0>(nextVertice)),
+                               *std::find(mySpotsList.begin(), mySpotsList.end(), Spots(path.getDestination()))});
         }
     }
 
 
-
-    std::cout << "A viagem que leva o maior número de passageiros é " << myTravelList[position].getOrigin()
-              << " " << myTravelList[position].getDestination()
-              << " " << myTravelList[position].getCapacity()
-              << " " << myTravelList[position].getDuration() << std::endl;
+    std::cout << "A viagem que leva o maior número de passageiros é " << std::get<1>( pathFlow[ending]);
 
 }
 
 
 
-void Manager::MaxDimMinTrans(int start, int ending){
+void Manager::MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int ending){
 
 
-    auto spotStart = mySpotsList.find(Spots(start));
     std::vector<Spots> visited = {};
-
-    std::vector<Travel> paths = minPath(spotStart, ending, visited); //distance vector
-
-}
-std::vector<Travel>  Manager::minPath(Spots spotStart, int ending, std::vector<Spots> visited){
-    visited.push_back(spotStart);
-    if(spotStart.getLocation() == ending){
-        return visited;
-    }
-    else {
-        for (auto path: spotStart.getPaths()) {
-            auto spotNext = mySpotsList.find(Spots(path.getDestination()));
-            std::vector<Travel> paths = minPath(spotNext, ending, visited);
-
-        }
-    }
-
 
 }
 Manager::Manager(std::vector<Travel> myTravelList) :myTravelList(myTravelList){
-    for (auto travel: myTravelList) {
-        mySpotsList.insert(Spots(travel.getDestination()));
-        mySpotsList.insert(Spots(travel.getOrigin()));
-    }
-    for (auto spot: mySpotsList) {
-        for (auto travel: myTravelList) {
-            if (travel.getOrigin() == spot.getLocation()){
-                spot.addPath(travel);
-            }
+    for (Travel travel: myTravelList) {
+        if (mySpotsList.end() != std::find(mySpotsList.begin(), mySpotsList.end(), Spots(travel.getOrigin()))){
+            std::find(mySpotsList.begin(),mySpotsList.end(), Spots(travel.getOrigin()))->addPath(travel);
         }
+        else{
+            mySpotsList.push_back(Spots(travel.getOrigin()));
+            std::find(mySpotsList.begin(),mySpotsList.end(), Spots(travel.getOrigin()))->addPath(travel);
+        }
+        if (mySpotsList.end() == std::find(mySpotsList.begin(), mySpotsList.end(), Spots(travel.getDestination()))){
+            mySpotsList.push_back(Spots(travel.getDestination()));
+        }
+
+
     }
 
+}
 
-
+std::vector<Spots> &Manager::getMySpotsList(){
+    return mySpotsList;
 }
 

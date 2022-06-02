@@ -4,13 +4,12 @@
 
 #include "Spots.h"
 
-Spots::Spots(int location): location(location), paths({}) {
+Spots::Spots(int location): location(location), paths({}), visited(false) {
 
 }
 
-void Spots::addPath(Travel newPath){
-    paths.insert(newPath);
-
+void Spots::addPath(Travel &newPath){
+    paths.push_back(newPath);
 }
 
 bool Spots::operator==(const Spots &rhs) const {
@@ -41,7 +40,16 @@ bool Spots::operator>=(const Spots &rhs) const {
     return !(*this < rhs);
 }
 
-const std::set<Travel> &Spots::getPaths() const {
+std::vector<Travel> Spots::getPaths(){
     return paths;
 }
+
+void Spots::setVisited(bool visited) {
+    Spots::visited = visited;
+}
+
+Spots::Spots() {
+
+}
+
 

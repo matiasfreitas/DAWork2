@@ -6,12 +6,14 @@
 #define DAWORK2_SPOTS_H
 
 #include <set>
+#include <vector>
 #include "Travel.h"
 
 class Spots {
 public:
+    Spots();
     Spots(int location);
-    void addPath(Travel newPath);
+    void addPath(Travel &newPath);
 
     bool operator==(const Spots &rhs) const;
 
@@ -24,14 +26,23 @@ public:
     bool operator>(const Spots &rhs) const;
 
     bool operator<=(const Spots &rhs) const;
-
+    Spots& operator=(Spots other){
+        this->paths = other.paths;
+        this->location = other.location;
+        this->visited = other.visited;
+        return *this;
+    }
     bool operator>=(const Spots &rhs) const;
 
-    const std::set<Travel> &getPaths() const;
+    std::vector<Travel> getPaths();
+
+    void setVisited(bool visited);
+
 
 private:
     int location;
-    std::set<Travel> paths;
+    std::vector<Travel> paths;
+    bool visited;
 };
 
 

@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/matiasfg/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.5744.254/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = /home/matiasfg/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = "/Users/matiasfg/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.5744.254/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = /home/matiasfg/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/matiasfg/Documents/DAWork2.2
+CMAKE_SOURCE_DIR = /home/matiasfg/Documents/DAWork2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/matiasfg/Documents/DAWork2.2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/matiasfg/Documents/DAWork2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/DAWork2.dir/depend.make
@@ -72,72 +72,72 @@ include CMakeFiles/DAWork2.dir/flags.make
 CMakeFiles/DAWork2.dir/Source/main.cpp.o: CMakeFiles/DAWork2.dir/flags.make
 CMakeFiles/DAWork2.dir/Source/main.cpp.o: ../Source/main.cpp
 CMakeFiles/DAWork2.dir/Source/main.cpp.o: CMakeFiles/DAWork2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DAWork2.dir/Source/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/main.cpp.o -MF CMakeFiles/DAWork2.dir/Source/main.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/main.cpp.o -c /Users/matiasfg/Documents/DAWork2.2/Source/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DAWork2.dir/Source/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/main.cpp.o -MF CMakeFiles/DAWork2.dir/Source/main.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/main.cpp.o -c /home/matiasfg/Documents/DAWork2/Source/main.cpp
 
 CMakeFiles/DAWork2.dir/Source/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DAWork2.dir/Source/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/matiasfg/Documents/DAWork2.2/Source/main.cpp > CMakeFiles/DAWork2.dir/Source/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matiasfg/Documents/DAWork2/Source/main.cpp > CMakeFiles/DAWork2.dir/Source/main.cpp.i
 
 CMakeFiles/DAWork2.dir/Source/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DAWork2.dir/Source/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/matiasfg/Documents/DAWork2.2/Source/main.cpp -o CMakeFiles/DAWork2.dir/Source/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matiasfg/Documents/DAWork2/Source/main.cpp -o CMakeFiles/DAWork2.dir/Source/main.cpp.s
 
 CMakeFiles/DAWork2.dir/Source/Reader.cpp.o: CMakeFiles/DAWork2.dir/flags.make
 CMakeFiles/DAWork2.dir/Source/Reader.cpp.o: ../Source/Reader.cpp
 CMakeFiles/DAWork2.dir/Source/Reader.cpp.o: CMakeFiles/DAWork2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DAWork2.dir/Source/Reader.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/Reader.cpp.o -MF CMakeFiles/DAWork2.dir/Source/Reader.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/Reader.cpp.o -c /Users/matiasfg/Documents/DAWork2.2/Source/Reader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DAWork2.dir/Source/Reader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/Reader.cpp.o -MF CMakeFiles/DAWork2.dir/Source/Reader.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/Reader.cpp.o -c /home/matiasfg/Documents/DAWork2/Source/Reader.cpp
 
 CMakeFiles/DAWork2.dir/Source/Reader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DAWork2.dir/Source/Reader.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/matiasfg/Documents/DAWork2.2/Source/Reader.cpp > CMakeFiles/DAWork2.dir/Source/Reader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matiasfg/Documents/DAWork2/Source/Reader.cpp > CMakeFiles/DAWork2.dir/Source/Reader.cpp.i
 
 CMakeFiles/DAWork2.dir/Source/Reader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DAWork2.dir/Source/Reader.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/matiasfg/Documents/DAWork2.2/Source/Reader.cpp -o CMakeFiles/DAWork2.dir/Source/Reader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matiasfg/Documents/DAWork2/Source/Reader.cpp -o CMakeFiles/DAWork2.dir/Source/Reader.cpp.s
 
 CMakeFiles/DAWork2.dir/Source/Travel.cpp.o: CMakeFiles/DAWork2.dir/flags.make
 CMakeFiles/DAWork2.dir/Source/Travel.cpp.o: ../Source/Travel.cpp
 CMakeFiles/DAWork2.dir/Source/Travel.cpp.o: CMakeFiles/DAWork2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DAWork2.dir/Source/Travel.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/Travel.cpp.o -MF CMakeFiles/DAWork2.dir/Source/Travel.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/Travel.cpp.o -c /Users/matiasfg/Documents/DAWork2.2/Source/Travel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DAWork2.dir/Source/Travel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/Travel.cpp.o -MF CMakeFiles/DAWork2.dir/Source/Travel.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/Travel.cpp.o -c /home/matiasfg/Documents/DAWork2/Source/Travel.cpp
 
 CMakeFiles/DAWork2.dir/Source/Travel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DAWork2.dir/Source/Travel.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/matiasfg/Documents/DAWork2.2/Source/Travel.cpp > CMakeFiles/DAWork2.dir/Source/Travel.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matiasfg/Documents/DAWork2/Source/Travel.cpp > CMakeFiles/DAWork2.dir/Source/Travel.cpp.i
 
 CMakeFiles/DAWork2.dir/Source/Travel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DAWork2.dir/Source/Travel.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/matiasfg/Documents/DAWork2.2/Source/Travel.cpp -o CMakeFiles/DAWork2.dir/Source/Travel.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matiasfg/Documents/DAWork2/Source/Travel.cpp -o CMakeFiles/DAWork2.dir/Source/Travel.cpp.s
 
 CMakeFiles/DAWork2.dir/Source/Manager.cpp.o: CMakeFiles/DAWork2.dir/flags.make
 CMakeFiles/DAWork2.dir/Source/Manager.cpp.o: ../Source/Manager.cpp
 CMakeFiles/DAWork2.dir/Source/Manager.cpp.o: CMakeFiles/DAWork2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DAWork2.dir/Source/Manager.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/Manager.cpp.o -MF CMakeFiles/DAWork2.dir/Source/Manager.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/Manager.cpp.o -c /Users/matiasfg/Documents/DAWork2.2/Source/Manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DAWork2.dir/Source/Manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/Manager.cpp.o -MF CMakeFiles/DAWork2.dir/Source/Manager.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/Manager.cpp.o -c /home/matiasfg/Documents/DAWork2/Source/Manager.cpp
 
 CMakeFiles/DAWork2.dir/Source/Manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DAWork2.dir/Source/Manager.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/matiasfg/Documents/DAWork2.2/Source/Manager.cpp > CMakeFiles/DAWork2.dir/Source/Manager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matiasfg/Documents/DAWork2/Source/Manager.cpp > CMakeFiles/DAWork2.dir/Source/Manager.cpp.i
 
 CMakeFiles/DAWork2.dir/Source/Manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DAWork2.dir/Source/Manager.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/matiasfg/Documents/DAWork2.2/Source/Manager.cpp -o CMakeFiles/DAWork2.dir/Source/Manager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matiasfg/Documents/DAWork2/Source/Manager.cpp -o CMakeFiles/DAWork2.dir/Source/Manager.cpp.s
 
 CMakeFiles/DAWork2.dir/Source/Spots.cpp.o: CMakeFiles/DAWork2.dir/flags.make
 CMakeFiles/DAWork2.dir/Source/Spots.cpp.o: ../Source/Spots.cpp
 CMakeFiles/DAWork2.dir/Source/Spots.cpp.o: CMakeFiles/DAWork2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DAWork2.dir/Source/Spots.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/Spots.cpp.o -MF CMakeFiles/DAWork2.dir/Source/Spots.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/Spots.cpp.o -c /Users/matiasfg/Documents/DAWork2.2/Source/Spots.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DAWork2.dir/Source/Spots.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DAWork2.dir/Source/Spots.cpp.o -MF CMakeFiles/DAWork2.dir/Source/Spots.cpp.o.d -o CMakeFiles/DAWork2.dir/Source/Spots.cpp.o -c /home/matiasfg/Documents/DAWork2/Source/Spots.cpp
 
 CMakeFiles/DAWork2.dir/Source/Spots.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DAWork2.dir/Source/Spots.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/matiasfg/Documents/DAWork2.2/Source/Spots.cpp > CMakeFiles/DAWork2.dir/Source/Spots.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matiasfg/Documents/DAWork2/Source/Spots.cpp > CMakeFiles/DAWork2.dir/Source/Spots.cpp.i
 
 CMakeFiles/DAWork2.dir/Source/Spots.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DAWork2.dir/Source/Spots.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/matiasfg/Documents/DAWork2.2/Source/Spots.cpp -o CMakeFiles/DAWork2.dir/Source/Spots.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matiasfg/Documents/DAWork2/Source/Spots.cpp -o CMakeFiles/DAWork2.dir/Source/Spots.cpp.s
 
 # Object files for target DAWork2
 DAWork2_OBJECTS = \
@@ -157,7 +157,7 @@ DAWork2: CMakeFiles/DAWork2.dir/Source/Manager.cpp.o
 DAWork2: CMakeFiles/DAWork2.dir/Source/Spots.cpp.o
 DAWork2: CMakeFiles/DAWork2.dir/build.make
 DAWork2: CMakeFiles/DAWork2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable DAWork2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable DAWork2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DAWork2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -169,6 +169,6 @@ CMakeFiles/DAWork2.dir/clean:
 .PHONY : CMakeFiles/DAWork2.dir/clean
 
 CMakeFiles/DAWork2.dir/depend:
-	cd /Users/matiasfg/Documents/DAWork2.2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/matiasfg/Documents/DAWork2.2 /Users/matiasfg/Documents/DAWork2.2 /Users/matiasfg/Documents/DAWork2.2/cmake-build-debug /Users/matiasfg/Documents/DAWork2.2/cmake-build-debug /Users/matiasfg/Documents/DAWork2.2/cmake-build-debug/CMakeFiles/DAWork2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/matiasfg/Documents/DAWork2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/matiasfg/Documents/DAWork2 /home/matiasfg/Documents/DAWork2 /home/matiasfg/Documents/DAWork2/cmake-build-debug /home/matiasfg/Documents/DAWork2/cmake-build-debug /home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles/DAWork2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/DAWork2.dir/depend
 

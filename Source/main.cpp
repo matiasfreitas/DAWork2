@@ -14,11 +14,11 @@ int main() {
     std::cout  << std::endl << std::endl << std::endl << std::endl
                << std::endl << "Testing max group dimension" << std::endl;
 
-    filename = "../Data/in02.txt";
+    filename = "../Data/in03.txt";
     travels = myReader.readTravelInfo(filename);
     Manager manager(travels);
 
-    //manager.MaxDimension(travels);
+    manager.MaxDimension(Spots(1), Spots(4));
 
     manager.MaxDimMinTrans(travels, 1, 10);
 

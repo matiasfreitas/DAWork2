@@ -11,21 +11,24 @@
 #include <iostream>
 #include <set>
 #include "Spots.h"
+#include <queue>
+#include "map"
 
 class Manager {
 
 public:
-    void MaxDimension(std::vector<Travel> &myTravelList);
+    void MaxDimension(Spots start, Spots ending);
     bool static TravelOriginSorter(Travel travel1, Travel travel2);
     // void resetCouriers(std::vector<Courier> &myCourierList);
 
     void MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int ending);
-    Manager(std::vector<Travel> myTravelList);
-    minPath(Spots spotStsrt, int ending, std::vectorSpots> visited);
+    explicit Manager(std::vector<Travel> myTravelList);
+
+    std::vector<Spots> &getMySpotsList();
 
 private:
     std::vector<Travel> myTravelList;
-    std::set<Spots> mySpotsList;
+    std::vector<Spots> mySpotsList;
 
 
 };
