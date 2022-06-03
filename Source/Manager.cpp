@@ -10,7 +10,7 @@ bool Manager::TravelOriginSorter(Travel travel1, Travel travel2) {
     return travel1.getOrigin() < travel2.getOrigin() && travel1.getDestination() < travel2.getDestination();
 }
 
-/*
+
 void Manager::MaxDimension(Spots start, Spots ending){
 
     start = *std::find(mySpotsList.begin(), mySpotsList.end(), start);
@@ -60,7 +60,7 @@ void Manager::MaxDimension(Spots start, Spots ending){
 
 }
 
-*/
+
 
  //-----------------------------------------------
 
@@ -71,32 +71,53 @@ void Manager::MinTrans(int start, int ending) { //Breadth-First Search (BFS)
     std::cout << "Starting spot location: "<< start << std::endl;
 
 
-    std::vector<Travel> best;
-    std::vector<Travel> myQueue;
-    std::vector<Travel> visited;
+    std::vector<Travel> best;  //melhor iteração
+    std::vector<Travel> myQueue;  //lista de caminhos por testar
+    std::vector<Travel> visited;  //caminhos a serem visitados no momento
 
-    bool terminate = false;
-    auto pos = start;
-    int icap = 0;
+    bool terminate = false;  //determina se o ciclo deve acabar
+    auto pos = start;  //posição atual
+    int icap; //capacidade inicial
 
-    int trans = 0;
-    int btrans = 100000;
+    int trans = 0; //n de transbordos atual
+    int btrans = 100000;  //recorde de menor n de transbordos
+
+    bool first = false;
 
     while(!terminate) {
-        //guarda todas as saidas vizinhas
-        myQueue = findPath(myTravelList, pos, myQueue);
+        //checks it is the inicial travel in a cycle
+        if(pos == start) {
+            first = true;
+        }else {
+            first = false;
+        }
+        //guarda todas as saidas possiveis
+        myQueue = findPath(myTravelList, pos, myQueue, icap, first);
 
+        //torna a ultima viagem em queue em visitada
         for(int i = 0; i<myTravelList.size(); i++) {
             if(myTravelList[i] == myQueue.back()) {
                 myTravelList[i].setVisited(true);
             }
         }
+
+        //guarda a ultima na lista visited o caminho a seguir se
         visited.push_back(myQueue.back());
-        trans++;
-        //icap = myQueue.back().getCapacity();
+        //remove o caminho escolhido da Queue
         myQueue.pop_back();
+        //define a posição atual como sendo a do destino do caminho escolhido
         pos = visited.back().getDestination();
+        //dá um print do caminho escolhido
         std::cout << visited.back().getOrigin() << " -> " << visited.back().getDestination() << std::endl;
+
+        //sets initial capacity to be the same as the start capacity
+        if(first) {
+            icap = visited.back().getCapacity();
+            trans = 0;
+        }else {
+            trans ++; //incrementa o n de transbordos
+        }
+
         if (pos == ending) {
             std::cout << " One cicle " << std::endl;
             if(trans < btrans) {
@@ -106,12 +127,9 @@ void Manager::MinTrans(int start, int ending) { //Breadth-First Search (BFS)
                 visited.clear();
             }
             pos = myQueue.back().getOrigin();
-            if(pos == start) {
-                icap = myQueue.back().getCapacity();
-            }
-            trans = 0;
         }
 
+        //verifica se tem mais caminhos alternativos por testar
         if(myQueue.empty()) {
             terminate = true;
         }
@@ -120,19 +138,15 @@ void Manager::MinTrans(int start, int ending) { //Breadth-First Search (BFS)
 
 
 
-
+/*
     while(!myQueue.empty()) {
         Travel x = myQueue.back();
         myQueue.pop_back();
         std::cout << " InQueue: " << x << std::endl;
     }
+*/
 
-
-
-
-    if(trans != 0) {
-        trans--;
-    }
+    //output
     std::cout << " Trans: " << trans << std::endl;
     std::cout << "A viagem com o menor número de transbordos é: " << start;
     for(auto a : best) {
@@ -142,15 +156,19 @@ void Manager::MinTrans(int start, int ending) { //Breadth-First Search (BFS)
 }
 
 
-std::vector<Travel> Manager::findPath(std::vector<Travel> list, int pos, std::vector<Travel> newqueue) {
+std::vector<Travel> Manager::findPath(std::vector<Travel> list, int pos, std::vector<Travel> newqueue, int cap, bool first) {
     for(auto x : list) {
-        if(x.getOrigin() == pos && !x.getVisited()) {
+        if(first && x.getOrigin() == pos && !x.getVisited()){ //se for a primeira nao sofre resticoes de capacidade
+            newqueue.push_back(x);
+        }else if(x.getOrigin() == pos && !x.getVisited() && x.getCapacity() >= cap) {
             newqueue.push_back(x);
         }
     }
     return newqueue;
 }
 
+
+//-------------------------------------------------------------------------------------------------------------
 
 Manager::Manager(std::vector<Travel> myTravelList) :myTravelList(myTravelList){
     for (Travel travel: myTravelList) { //adiciona o caminho ao spot se encontrar um spot com location = travel.Origin

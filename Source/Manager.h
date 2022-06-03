@@ -28,7 +28,7 @@ public:
 
     void MinTrans(int  start, int ending);
 
-    std::vector<Travel> findPath(std::vector<Travel> list, int pos, std::vector<Travel> newqueue);
+    std::vector<Travel> findPath(std::vector<Travel> list, int pos, std::vector<Travel> newqueue, int cap, bool first);
 
 private:
     std::vector<Travel> myTravelList;
