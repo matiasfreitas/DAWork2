@@ -32,7 +32,7 @@ std::vector<Travel> Reader::readTravelInfo(std::string filename, char delimeter)
             std::getline(my_file, capacity, ' ');
             std::getline(my_file, duration, '\n');
 
-            myTravel = Travel(std::stoi(origin), std::stoi(destination), std::stoi(capacity), std::stoi(duration), false, false);
+            myTravel = Travel(std::stoi(origin), std::stoi(destination), std::stoi(capacity), std::stoi(duration));
             myTravels.push_back(myTravel);
         }
     }

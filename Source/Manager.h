@@ -21,9 +21,14 @@ public:
     bool static TravelOriginSorter(Travel travel1, Travel travel2);
     // void resetCouriers(std::vector<Courier> &myCourierList);
 
-    void MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int ending);
+
     explicit Manager(std::vector<Travel> myTravelList);
+    Spots discoverPath(std::vector<Spots> mySpotsList, Spots pos, int capacity, Spots ending);
     std::vector<Spots> &getMySpotsList();
+
+    void MinTrans(int  start, int ending);
+
+    std::vector<Travel> findPath(std::vector<Travel> list, int pos, std::vector<Travel> newqueue);
 
 private:
     std::vector<Travel> myTravelList;

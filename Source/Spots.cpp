@@ -48,6 +48,9 @@ void Spots::setVisited(bool visited) {
     Spots::visited = visited;
 }
 
+bool Spots::getVisited() {
+    return visited;
+}
 Spots::Spots() {
 
 }

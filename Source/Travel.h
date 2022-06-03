@@ -9,7 +9,7 @@
 
 class Travel {
 public:
-    Travel(int origin, int destination, int capacity, int duration, bool used, bool blocked);
+    Travel(int origin, int destination, int capacity, int duration);
 
     Travel();
 
@@ -25,6 +25,15 @@ public:
 
     bool operator>=(const Travel &rhs) const;
 
+    Travel& operator=(Travel other){
+        this->origin = other.origin;
+        this->destination = other.destination;
+        this->visited = other.visited;
+        this->capacity = other.capacity;
+        this->duration = other.duration;
+        return *this;
+    }
+
     friend std::ostream &operator<<(std::ostream &os, const Travel &aTravel);
 
     int getOrigin() const;
@@ -35,19 +44,11 @@ public:
 
     int getDuration() const;
 
-    bool getUsed() const;
+    void setVisited(bool value);
 
-    void sended();
+    bool getVisited() const;
 
-    void reset();
-
-    bool getBlock() const;
-
-    void block();
-
-    void unblock();
-
-    bool isViablePathTo(int caminho, int cap);
+    bool isViablePathTo(int cap);
 
 private:
     int origin;
@@ -58,10 +59,7 @@ private:
 
     int duration;
 
-    bool used;
-
-    bool blocked;
-
+    bool visited;
 };
 
 #endif //TRAVEL

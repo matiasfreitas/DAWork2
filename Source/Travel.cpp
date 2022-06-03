@@ -5,8 +5,8 @@
 #include "Travel.h"
 #include "Spots.h"
 
-Travel::Travel(int origin, int destination, int capacity, int duration, bool used, bool blocked) : origin(origin), destination(destination),
-                                                                         capacity(capacity), duration(duration), used(used), blocked(blocked){}
+Travel::Travel(int origin, int destination, int capacity, int duration) : origin(origin), destination(destination),
+                                                                         capacity(capacity), duration(duration), visited(false){}
 
 Travel::Travel() {}
 
@@ -29,7 +29,6 @@ bool Travel::operator==(const Travel &rhs) const {
 bool Travel::operator!=(const Travel &rhs) const {
     return !(rhs == *this);
 }
-
 
 /**
  * This override operator > return true if that instance is more light and after volume than rhs
@@ -94,31 +93,14 @@ int Travel::getDuration() const {
     return duration;
 }
 
-
-bool Travel::getUsed() const{
-    return used;
+bool Travel::getVisited() const{
+    return visited;
 }
 
-void Travel::sended(){
-    Travel::used = true;
+void Travel::setVisited(bool value) {
+    Travel::visited = value;
 }
 
-void Travel::reset(){
-    Travel::used = false;
-}
-
-bool Travel::getBlock() const{
-    return  blocked;
-}
-
-void Travel::block(){
-    Travel::blocked = true;
-}
-
-void Travel::unblock() {
-    Travel::blocked = false;
-}
-
-bool Travel::isViablePathTo(int caminho, int cap) {
-    return this->getOrigin() == caminho && !this->getUsed() && this->getCapacity() >= cap && !this->getBlock();
+bool Travel::isViablePathTo(int cap) {
+    return !this->getVisited() && this->getCapacity() >= cap;
 }

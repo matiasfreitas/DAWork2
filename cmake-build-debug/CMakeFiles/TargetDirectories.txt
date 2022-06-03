@@ -1,3 +1,0 @@
-/home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/matiasfg/Documents/DAWork2/cmake-build-debug/CMakeFiles/DAWork2.dir

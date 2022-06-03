@@ -38,6 +38,8 @@ public:
 
     void setVisited(bool visited);
 
+    bool getVisited();
+
 
 private:
     int location;
