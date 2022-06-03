@@ -88,28 +88,42 @@ void Manager::MinTrans(int start, int ending) { //Breadth-First Search (BFS)
         //checks it is the inicial travel in a cycle
         if(pos == start) {
             first = true;
+            visited.clear();
         }else {
             first = false;
         }
+
         //guarda todas as saidas possiveis
         myQueue = findPath(myTravelList, pos, myQueue, icap, first);
 
-        //torna a ultima viagem em queue em visitada
-        for(int i = 0; i<myTravelList.size(); i++) {
-            if(myTravelList[i] == myQueue.back()) {
-                myTravelList[i].setVisited(true);
+        if(!myQueue.empty()) {
+            //torna a ultima viagem em queue em visitada
+            for (int i = 0; i < myTravelList.size(); i++) {
+                if (myTravelList[i] == myQueue.back()) {
+                    myTravelList[i].setVisited(true);
+                }
             }
+
+            for (int i = 0; i < myQueue.size(); i++) {
+                if (myQueue[i].getOrigin() == pos) {
+                    pos = start;
+                }
+            }
+            if (myQueue.back().getOrigin() == start) {
+                first = true;
+                visited.clear();
+                std::cout << " First " << std::endl;
+            }
+
+            //guarda a ultima na lista visited o caminho a seguir se
+            visited.push_back(myQueue.back());
+            //remove o caminho escolhido da Queue
+            myQueue.pop_back();
+            //define a posição atual como sendo a do destino do caminho escolhido
+            pos = visited.back().getDestination();
+            //dá um print do caminho escolhido
+            std::cout << visited.back().getOrigin() << " -> " << visited.back().getDestination() << std::endl;
         }
-
-        //guarda a ultima na lista visited o caminho a seguir se
-        visited.push_back(myQueue.back());
-        //remove o caminho escolhido da Queue
-        myQueue.pop_back();
-        //define a posição atual como sendo a do destino do caminho escolhido
-        pos = visited.back().getDestination();
-        //dá um print do caminho escolhido
-        std::cout << visited.back().getOrigin() << " -> " << visited.back().getDestination() << std::endl;
-
         //sets initial capacity to be the same as the start capacity
         if(first) {
             icap = visited.back().getCapacity();
@@ -126,31 +140,25 @@ void Manager::MinTrans(int start, int ending) { //Breadth-First Search (BFS)
                 btrans = trans;
                 visited.clear();
             }
+
             pos = myQueue.back().getOrigin();
         }
 
         //verifica se tem mais caminhos alternativos por testar
-        if(myQueue.empty()) {
+        if(myQueue.empty() && myQueue == findPath(myTravelList, pos, myQueue, icap, first)) {
             terminate = true;
         }
     }
 
-
-
-
-/*
-    while(!myQueue.empty()) {
-        Travel x = myQueue.back();
-        myQueue.pop_back();
-        std::cout << " InQueue: " << x << std::endl;
-    }
-*/
-
-    //output
-    std::cout << " Trans: " << trans << std::endl;
-    std::cout << "A viagem com o menor número de transbordos é: " << start;
-    for(auto a : best) {
-        std::cout << " -> " << a.getDestination();
+    if(best.empty()) {
+        std::cout << "No resutls!" << std::endl;
+    }else {
+        //output
+        std::cout << " Trans: " << btrans << std::endl;
+        std::cout << "A viagem com o menor número de transbordos é: " << start;
+        for (auto a: best) {
+            std::cout << " -> " << a.getDestination();
+        }
     }
 
 }
