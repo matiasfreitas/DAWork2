@@ -3,6 +3,7 @@
 //
 
 #include "Travel.h"
+#include "Spots.h"
 
 Travel::Travel(int origin, int destination, int capacity, int duration, bool used, bool blocked) : origin(origin), destination(destination),
                                                                          capacity(capacity), duration(duration), used(used), blocked(blocked){}

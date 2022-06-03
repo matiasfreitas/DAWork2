@@ -23,7 +23,6 @@ public:
 
     void MaxDimMinTrans(std::vector<Travel> &myTravelList, int start, int ending);
     explicit Manager(std::vector<Travel> myTravelList);
-
     std::vector<Spots> &getMySpotsList();
 
 private:

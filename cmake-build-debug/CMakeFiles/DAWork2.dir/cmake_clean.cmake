@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DAWork2.dir/Source/Travel.cpp.o.d"
   "CMakeFiles/DAWork2.dir/Source/main.cpp.o"
   "CMakeFiles/DAWork2.dir/Source/main.cpp.o.d"
+  "CMakeFiles/DAWork2.dir/Source/pathCalculator.cpp.o"
+  "CMakeFiles/DAWork2.dir/Source/pathCalculator.cpp.o.d"
   "DAWork2"
   "DAWork2.pdb"
 )

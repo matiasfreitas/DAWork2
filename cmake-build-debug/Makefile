@@ -249,6 +249,30 @@ Source/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DAWork2.dir/build.make CMakeFiles/DAWork2.dir/Source/main.cpp.s
 .PHONY : Source/main.cpp.s
 
+Source/pathCalculator.o: Source/pathCalculator.cpp.o
+.PHONY : Source/pathCalculator.o
+
+# target to build an object file
+Source/pathCalculator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DAWork2.dir/build.make CMakeFiles/DAWork2.dir/Source/pathCalculator.cpp.o
+.PHONY : Source/pathCalculator.cpp.o
+
+Source/pathCalculator.i: Source/pathCalculator.cpp.i
+.PHONY : Source/pathCalculator.i
+
+# target to preprocess a source file
+Source/pathCalculator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DAWork2.dir/build.make CMakeFiles/DAWork2.dir/Source/pathCalculator.cpp.i
+.PHONY : Source/pathCalculator.cpp.i
+
+Source/pathCalculator.s: Source/pathCalculator.cpp.s
+.PHONY : Source/pathCalculator.s
+
+# target to generate assembly for a file
+Source/pathCalculator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DAWork2.dir/build.make CMakeFiles/DAWork2.dir/Source/pathCalculator.cpp.s
+.PHONY : Source/pathCalculator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +297,9 @@ help:
 	@echo "... Source/main.o"
 	@echo "... Source/main.i"
 	@echo "... Source/main.s"
+	@echo "... Source/pathCalculator.o"
+	@echo "... Source/pathCalculator.i"
+	@echo "... Source/pathCalculator.s"
 .PHONY : help
 
 

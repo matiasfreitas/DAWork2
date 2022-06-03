@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/matiasfg/Documents/DAWork2/Source/Spots.cpp" "CMakeFiles/DAWork2.dir/Source/Spots.cpp.o" "gcc" "CMakeFiles/DAWork2.dir/Source/Spots.cpp.o.d"
   "/home/matiasfg/Documents/DAWork2/Source/Travel.cpp" "CMakeFiles/DAWork2.dir/Source/Travel.cpp.o" "gcc" "CMakeFiles/DAWork2.dir/Source/Travel.cpp.o.d"
   "/home/matiasfg/Documents/DAWork2/Source/main.cpp" "CMakeFiles/DAWork2.dir/Source/main.cpp.o" "gcc" "CMakeFiles/DAWork2.dir/Source/main.cpp.o.d"
+  "/home/matiasfg/Documents/DAWork2/Source/pathCalculator.cpp" "CMakeFiles/DAWork2.dir/Source/pathCalculator.cpp.o" "gcc" "CMakeFiles/DAWork2.dir/Source/pathCalculator.cpp.o.d"
   )
 
 # Targets to which this target links.

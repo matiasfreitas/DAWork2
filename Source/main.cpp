@@ -20,7 +20,6 @@ int main() {
 
     manager.MaxDimension(Spots(1), Spots(4));
 
-    manager.MaxDimMinTrans(travels, 1, 10);
 
     return 0;
 }

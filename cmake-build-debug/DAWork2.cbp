@@ -109,6 +109,12 @@
 		<Unit filename="/home/matiasfg/Documents/DAWork2/Source/main.cpp">
 			<Option target="DAWork2"/>
 		</Unit>
+		<Unit filename="/home/matiasfg/Documents/DAWork2/Source/pathCalculator.cpp">
+			<Option target="DAWork2"/>
+		</Unit>
+		<Unit filename="/home/matiasfg/Documents/DAWork2/Source/pathCalculator.h">
+			<Option target="DAWork2"/>
+		</Unit>
 		<Unit filename="/home/matiasfg/Documents/DAWork2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

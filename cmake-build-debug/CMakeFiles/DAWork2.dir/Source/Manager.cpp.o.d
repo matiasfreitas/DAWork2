@@ -160,4 +160,5 @@ CMakeFiles/DAWork2.dir/Source/Manager.cpp.o: \
  /usr/include/c++/9/bits/uses_allocator.h /usr/include/c++/9/map \
  /usr/include/c++/9/bits/stl_map.h /usr/include/c++/9/tuple \
  /usr/include/c++/9/array /usr/include/c++/9/bits/invoke.h \
- /usr/include/c++/9/bits/stl_multimap.h
+ /usr/include/c++/9/bits/stl_multimap.h \
+ /home/matiasfg/Documents/DAWork2/Source/pathCalculator.h
