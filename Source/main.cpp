@@ -10,7 +10,7 @@ int main() {
     std::string filename;
     std::vector<Travel> travels;
 
-    filename = "../Data/in02.txt";
+    filename = "../input/in02.txt";
     travels = myReader.readTravelInfo(filename);
     Manager manager(travels);
     std::cout << " CENARIO 1: " << std::endl;

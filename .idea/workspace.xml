@@ -15,10 +15,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c8252ac-4b80-44b1-907b-8343fd3e5e5c" name="Changes" comment="Commit Try">
+      <change afterPath="$PROJECT_DIR$/input/in02.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/in01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input/in01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/in02.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/in03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input/in03.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Manager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DAWork2.dir/Source/Manager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DAWork2.dir/Source/Manager.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DAWork2.dir/Source/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DAWork2.dir/Source/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DAWork2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DAWork2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +127,7 @@
       <workItem from="1654462820245" duration="9795000" />
       <workItem from="1654511207884" duration="22258000" />
       <workItem from="1654545424274" duration="452000" />
-      <workItem from="1654552448325" duration="303000" />
+      <workItem from="1654552448325" duration="2189000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Try">
       <created>1654018586506</created>
@@ -175,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654545483785</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Commit Try">
+      <created>1654552756564</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654552756564</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

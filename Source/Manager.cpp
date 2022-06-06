@@ -225,7 +225,7 @@ void Manager::MinDurationPath(int start, int ending, int size) {
     int cap; //capacidade atual
     int time = 0;
     int lastarrival = 0;
-    int firstarrival;
+    int firstarrival = NULL;
     int lastransported = 0;
 
     while (!terminate) {
@@ -272,7 +272,6 @@ void Manager::MinDurationPath(int start, int ending, int size) {
             myQueue.pop_back();
             //define a posição atual como sendo a do destino do caminho escolhido
             pos = visited.back().getDestination();
-            //dá um print do caminho escolhido
         }
 
         //armazena o valor de pessoas transportadas naquela viagem
@@ -292,6 +291,9 @@ void Manager::MinDurationPath(int start, int ending, int size) {
                     std::cout << " -> " << x.getDestination();
                 }
                 std::cout << " Total time: " << time << std::endl;
+                if(firstarrival == NULL) {
+                    firstarrival = time;
+                }
                 if (time > lastarrival) {
                     lastarrival = time;
                 }
@@ -334,13 +336,6 @@ Manager::Manager(std::vector<Travel> myTravelList) :myTravelList(myTravelList){
     }
 
 }
-
-
-
-
-
-
-
 
 
 
