@@ -48,6 +48,10 @@ public:
 
     bool getVisited() const;
 
+    int getTransportados() const;
+
+    void setTransportados(int value);
+
     bool isViablePathTo(int cap);
 
 private:
@@ -60,6 +64,8 @@ private:
     int duration;
 
     bool visited;
+
+    int transportados;
 };
 
 #endif //TRAVEL

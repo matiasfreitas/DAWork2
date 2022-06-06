@@ -6,7 +6,7 @@
 #include "Spots.h"
 
 Travel::Travel(int origin, int destination, int capacity, int duration) : origin(origin), destination(destination),
-                                                                         capacity(capacity), duration(duration), visited(false){}
+                                                                         capacity(capacity), duration(duration), visited(false), transportados(0){}
 
 Travel::Travel() {}
 
@@ -103,4 +103,12 @@ void Travel::setVisited(bool value) {
 
 bool Travel::isViablePathTo(int cap) {
     return !this->getVisited() && this->getCapacity() >= cap;
+}
+
+int Travel::getTransportados() const {
+    return transportados;
+}
+
+void Travel::setTransportados(int value) {
+    Travel::transportados = value;
 }
