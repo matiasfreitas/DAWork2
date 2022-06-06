@@ -29,6 +29,10 @@ std::vector<Travel> Manager::findPath2(std::vector<Travel> list, int pos, std::v
 
 void Manager::MaxDimension(int start, int ending){
 
+    for (int i = 0; i < myTravelList.size(); i++) {
+        myTravelList[i].setVisited(false);
+    }
+
     std::vector<Travel> best;  //melhor iteração
     std::vector<Travel> myQueue;  //lista de caminhos por testar
     std::vector<Travel> visited;  //caminhos a serem visitados no momento
@@ -99,12 +103,10 @@ void Manager::MaxDimension(int start, int ending){
         }
     }
 
-
-
+    //output
     if(best.empty()) {
         std::cout << "No resutls!" << std::endl;
     }else {
-        //output
         std::cout << "A viagem que leva o maior número de passageiros é: " << start;
         for (auto a: best) {
             std::cout << " -> " << a.getDestination();
