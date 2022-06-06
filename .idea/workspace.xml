@@ -16,7 +16,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2c8252ac-4b80-44b1-907b-8343fd3e5e5c" name="Changes" comment="Commit Try">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/in03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/in03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/in02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/in02.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Manager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Manager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Manager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/main.cpp" afterDir="false" />
@@ -116,7 +116,7 @@
       <workItem from="1654455093629" duration="316000" />
       <workItem from="1654455426939" duration="2387000" />
       <workItem from="1654462820245" duration="9795000" />
-      <workItem from="1654511207884" duration="10288000" />
+      <workItem from="1654511207884" duration="15080000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Try">
       <created>1654018586506</created>
@@ -146,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654527292770</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Commit Try">
+      <created>1654533394700</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654533394700</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

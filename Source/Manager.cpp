@@ -245,6 +245,7 @@ void Manager::GroupPath(int start, int ending, int size) { //Breadth-First Searc
     int cap; //capacidade atual
 
     int lastransported = 0;
+    int transported = 0;
 
     int trans = 0; //n de transbordos atual
     int btrans = 100000;  //recorde de menor n de transbordos
@@ -278,13 +279,23 @@ void Manager::GroupPath(int start, int ending, int size) { //Breadth-First Searc
             }
             if (myQueue.back().getOrigin() == start) {
                 lastransported = myQueue.back().getCapacity();
+                cap = lastransported;
                 first = true;
                 visited.clear();
                 //std::cout << " First " << std::endl;
+            }else{
+                lastransported = visited.back().getTransportados();
+                cap = myQueue.back().getCapacity();
+                //std::cout << "cap: " << cap  << " pass " << lastransported << std::endl;
+                if(lastransported > cap) {
+                    visited.back().setTransportados(lastransported-cap);
+                }else {
+                    visited.back().setTransportados(0);
+                    cap = lastransported;
+                }
             }
-
-            //guarda a ultima na lista visited o caminho a seguir se
-            visited.push_back(myQueue.back());
+                //guarda a ultima na lista visited o caminho a seguir se
+                visited.push_back(myQueue.back());
             //remove o caminho escolhido da Queue
             myQueue.pop_back();
             //define a posição atual como sendo a do destino do caminho escolhido
@@ -296,18 +307,11 @@ void Manager::GroupPath(int start, int ending, int size) { //Breadth-First Searc
         if(first) {
             icap = visited.back().getCapacity();
             trans = 0;
-        }else {
-            cap = visited.back().getCapacity();
-            trans ++; //incrementa o n de transbordos
-            if(cap>=lastransported) {
-                cap = lastransported;
-            }else {
-                lastransported = cap;
-            }
         }
 
         //armazena o valor de pessoas transportadas naquela viagem
         visited.back().setTransportados(cap);
+        //std::cout << " visited: " << visited.back().getOrigin() << " -> " << visited.back().getDestination() << " " << visited.back().getTransportados() << std::endl;
 
         if (pos == ending) {
             //std::cout << " One cicle " << std::endl;
@@ -403,9 +407,20 @@ void Manager::MaxGroupPath(int start, int ending) { //Breadth-First Search (BFS)
             }
             if (myQueue.back().getOrigin() == start) {
                 lastransported = myQueue.back().getCapacity();
+                cap = lastransported;
                 first = true;
                 visited.clear();
                 //std::cout << " First " << std::endl;
+            }else{
+                lastransported = visited.back().getTransportados();
+                cap = myQueue.back().getCapacity();
+                //std::cout << "cap: " << cap  << " pass " << lastransported << std::endl;
+                if(lastransported > cap) {
+                    visited.back().setTransportados(lastransported-cap);
+                }else {
+                    visited.back().setTransportados(0);
+                    cap = lastransported;
+                }
             }
 
             //guarda a ultima na lista visited o caminho a seguir se
@@ -474,6 +489,145 @@ void Manager::MaxGroupPath(int start, int ending) { //Breadth-First Search (BFS)
 }
 
 //---------------------------------------------------------------------------------------------------------
+
+void Manager::MinDurationPath(int start, int ending, int size) { //Breadth-First Search (BFS)
+    /*std::cout << "MIMDURATIONPATH 2.4" << std::endl;
+    for (int i = 0; i < myTravelList.size(); i++) {
+        myTravelList[i].setVisited(false);
+    }
+
+    std::vector<Travel> best;  //melhor iteração
+    std::vector<Travel> myQueue;  //lista de caminhos por testar
+    std::vector<Travel> visited;  //caminhos a serem visitados no momento
+
+    bool terminate = false;  //determina se o ciclo deve acabar
+    auto pos = start;  //posição atual
+    int icap; //capacidade inicial
+    int cap; //capacidade atual
+    int time = 0;
+
+    int lastransported = 0;
+
+    int trans = 0; //n de transbordos atual
+    int btrans = 100000;  //recorde de menor n de transbordos
+
+    bool first = false;
+
+    while (!terminate) {
+        //checks it is the inicial travel in a cycle
+        if (pos == start) {
+            first = true;
+            visited.clear();
+            time = 0;
+        } else {
+            first = false;
+        }
+
+        //guarda todas as saidas possiveis
+        myQueue = findPath2(myTravelList, pos, myQueue);
+
+        if (!myQueue.empty()) {
+            //torna a ultima viagem em queue em visitada
+            for (int i = 0; i < myTravelList.size(); i++) {
+                if (myTravelList[i] == myQueue.back()) {
+                    myTravelList[i].setVisited(true);
+                }
+            }
+
+            for (int i = 0; i < myQueue.size(); i++) {
+                if (myQueue[i].getOrigin() == pos) {
+                    pos = start;
+                }
+            }
+            if (myQueue.back().getOrigin() == start) {
+                lastransported = myQueue.back().getCapacity();
+                first = true;
+                visited.clear();
+                //std::cout << " First " << std::endl;
+            }
+
+            //guarda a ultima na lista visited o caminho a seguir se
+            visited.push_back(myQueue.back());
+            //remove o caminho escolhido da Queue
+            myQueue.pop_back();
+            //define a posição atual como sendo a do destino do caminho escolhido
+            pos = visited.back().getDestination();
+            //dá um print do caminho escolhido
+            //std::cout << visited.back().getOrigin() << " -> " << visited.back().getDestination() << std::endl;
+        }
+
+        std::cout << " last transported " << lastransported << std::endl;
+        //sets initial capacity to be the same as the start capacity
+        if (first) {
+            icap = visited.back().getCapacity();
+            trans = 0;
+            time = 0;
+        } else {
+            std::cout << visited.back().getOrigin() << " -> " << visited.back().getDestination() << std::endl;
+            lastransported = visited.back().getTransportados();
+            std::cout << lastransported << std::endl;
+            cap = visited.back().getCapacity();
+            std::cout << "current cap " << cap << std::endl;
+            trans++; //incrementa o n de transbordos
+            if (cap >= lastransported) {
+                cap = lastransported;
+            } else {
+                lastransported = cap;
+            }
+        }
+        std::cout << "final cap " << cap << "   " << visited.back().getOrigin() << " -> " << visited.back().getDestination() << std::endl;
+
+        time += visited.back().getDuration();
+        //armazena o valor de pessoas transportadas naquela viagem
+        visited.back().setTransportados(cap);
+
+        if (pos == ending) {
+            //std::cout << " One cicle " << std::endl;
+            if(size > 0) {
+                std::cout << " Passageiros enviados: " << cap << std::endl;
+                size -= cap;
+                if (size < 0) {
+                    size = 0;
+                }
+                best = visited;
+                btrans = trans;
+                //visited.clear();
+                //output
+                std::cout << "A viagem para um grupo de tamanho definido: " << start;
+                for (auto a: best) {
+                    std::cout << " -> " << a.getDestination();
+                }
+                std::cout << " Falta transportar: " << size << std::endl;
+
+                std::cout << "A viagem com a menor duração: " << start;
+                for (auto a: best) {
+                    std::cout << " -> " << a.getDestination();
+                }
+                std::cout << " Duração: " << time << std::endl;
+            }
+
+            pos = myQueue.back().getOrigin();
+            while (!visited.empty()) {
+                if (pos == visited.back().getOrigin()) {
+                    visited.pop_back();
+                    break;
+                }
+                visited.pop_back();
+            }
+
+        }
+
+        //verifica se tem mais caminhos alternativos por testar
+        if (myQueue.empty() && myQueue == findPath2(myTravelList, pos, myQueue)) {
+            terminate = true;
+        }
+    }
+
+    if (best.empty()) {
+        std::cout << "No resutls!" << std::endl;
+    }
+*/
+}
 
 //----------------------------------------------------------------------------------------------------------
 

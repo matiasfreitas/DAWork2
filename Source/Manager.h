@@ -33,6 +33,8 @@ public:
 
     void MaxGroupPath(int start, int ending);
 
+    void MinDurationPath(int start, int ending, int size);
+
     std::vector<Travel> findPath(std::vector<Travel> list, int pos, std::vector<Travel> newqueue, int cap, bool first);
     std::vector<Travel> findPath2(std::vector<Travel> list, int pos, std::vector<Travel> newqueue);
 
