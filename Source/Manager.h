@@ -17,7 +17,6 @@
 class Manager {
 
 public:
-    void MaxDimension(int start, int ending);
     bool static TravelOriginSorter(Travel travel1, Travel travel2);
     // void resetCouriers(std::vector<Courier> &myCourierList);
 
@@ -26,9 +25,14 @@ public:
     Spots discoverPath(std::vector<Spots> mySpotsList, Spots pos, int capacity, Spots ending);
     std::vector<Spots> &getMySpotsList();
 
+    void MaxDimension(int start, int ending);
+
     void MinTrans(int  start, int ending);
 
     void GroupPath(int start, int ending, int size);
+
+    void MaxGroupPath(int start, int ending);
+
     std::vector<Travel> findPath(std::vector<Travel> list, int pos, std::vector<Travel> newqueue, int cap, bool first);
     std::vector<Travel> findPath2(std::vector<Travel> list, int pos, std::vector<Travel> newqueue);
 

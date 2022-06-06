@@ -22,6 +22,7 @@ int main() {
     manager.MinTrans(1, 8);
     std::cout << " CENARIO 2: " << std::endl;
     manager.GroupPath(1,8, 5);
+    manager.MaxGroupPath(1,8);
 
     return 0;
 }
