@@ -52,8 +52,6 @@ public:
 
     void setTransportados(int value);
 
-    bool isViablePathTo(int cap);
-
 private:
     int origin;
 

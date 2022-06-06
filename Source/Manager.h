@@ -10,20 +10,14 @@
 #include <algorithm>
 #include <iostream>
 #include <set>
-#include "Spots.h"
 #include <queue>
 #include "map"
 
 class Manager {
 
 public:
-    bool static TravelOriginSorter(Travel travel1, Travel travel2);
-    // void resetCouriers(std::vector<Courier> &myCourierList);
-
 
     explicit Manager(std::vector<Travel> myTravelList);
-    Spots discoverPath(std::vector<Spots> mySpotsList, Spots pos, int capacity, Spots ending);
-    std::vector<Spots> &getMySpotsList();
 
     void MaxDimension(int start, int ending);
 
@@ -40,8 +34,6 @@ public:
 
 private:
     std::vector<Travel> myTravelList;
-    std::vector<Spots> mySpotsList;
-
 
 };
 

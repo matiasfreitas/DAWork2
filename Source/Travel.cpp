@@ -3,7 +3,6 @@
 //
 
 #include "Travel.h"
-#include "Spots.h"
 
 Travel::Travel(int origin, int destination, int capacity, int duration) : origin(origin), destination(destination),
                                                                          capacity(capacity), duration(duration), visited(false), transportados(0){}
@@ -65,6 +64,7 @@ bool Travel::operator<=(const Travel &rhs) const {
 bool Travel::operator>=(const Travel &rhs) const {
     return !(*this < rhs);
 }
+
 /**
  * This override operator extractor operator to out information about this object
  * @param os where is going the output
@@ -74,7 +74,6 @@ std::ostream &operator<<(std::ostream &os, const Travel &aTravel) {
        << " duration: " << aTravel.duration;
     return os;
 }
-
 
 
 int Travel::getOrigin() const {
@@ -99,10 +98,6 @@ bool Travel::getVisited() const{
 
 void Travel::setVisited(bool value) {
     Travel::visited = value;
-}
-
-bool Travel::isViablePathTo(int cap) {
-    return !this->getVisited() && this->getCapacity() >= cap;
 }
 
 int Travel::getTransportados() const {
