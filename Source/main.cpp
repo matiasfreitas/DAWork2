@@ -19,7 +19,7 @@ int main() {
     //std::cout << " CENARIO 2: " << std::endl;
     manager.GroupPath(1,8, 5);
     manager.MaxGroupPath(1,8);
-    //manager.MinDurationPath(1,8, 5);
+    manager.MinDurationPath(1,8, 5);
 
     return 0;
 }

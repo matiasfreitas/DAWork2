@@ -436,14 +436,6 @@ void Manager::MaxGroupPath(int start, int ending) { //Breadth-First Search (BFS)
         if (first) {
             icap = visited.back().getCapacity();
             trans = 0;
-        } else {
-            cap = visited.back().getCapacity();
-            trans++; //incrementa o n de transbordos
-            if (cap >= lastransported) {
-                cap = lastransported;
-            } else {
-                lastransported = cap;
-            }
         }
 
         //armazena o valor de pessoas transportadas naquela viagem
@@ -491,7 +483,7 @@ void Manager::MaxGroupPath(int start, int ending) { //Breadth-First Search (BFS)
 //---------------------------------------------------------------------------------------------------------
 
 void Manager::MinDurationPath(int start, int ending, int size) { //Breadth-First Search (BFS)
-    /*std::cout << "MIMDURATIONPATH 2.4" << std::endl;
+    std::cout << "MIMDURATIONPATH 2.4" << std::endl;
     for (int i = 0; i < myTravelList.size(); i++) {
         myTravelList[i].setVisited(false);
     }
@@ -505,6 +497,7 @@ void Manager::MinDurationPath(int start, int ending, int size) { //Breadth-First
     int icap; //capacidade inicial
     int cap; //capacidade atual
     int time = 0;
+    int lastarrival = 0;
 
     int lastransported = 0;
 
@@ -541,9 +534,20 @@ void Manager::MinDurationPath(int start, int ending, int size) { //Breadth-First
             }
             if (myQueue.back().getOrigin() == start) {
                 lastransported = myQueue.back().getCapacity();
+                cap = lastransported;
                 first = true;
                 visited.clear();
                 //std::cout << " First " << std::endl;
+            }else{
+                lastransported = visited.back().getTransportados();
+                cap = myQueue.back().getCapacity();
+                //std::cout << "cap: " << cap  << " pass " << lastransported << std::endl;
+                if(lastransported > cap) {
+                    visited.back().setTransportados(lastransported-cap);
+                }else {
+                    visited.back().setTransportados(0);
+                    cap = lastransported;
+                }
             }
 
             //guarda a ultima na lista visited o caminho a seguir se
@@ -555,36 +559,20 @@ void Manager::MinDurationPath(int start, int ending, int size) { //Breadth-First
             //dá um print do caminho escolhido
             //std::cout << visited.back().getOrigin() << " -> " << visited.back().getDestination() << std::endl;
         }
-
-        std::cout << " last transported " << lastransported << std::endl;
         //sets initial capacity to be the same as the start capacity
         if (first) {
             icap = visited.back().getCapacity();
             trans = 0;
-            time = 0;
-        } else {
-            std::cout << visited.back().getOrigin() << " -> " << visited.back().getDestination() << std::endl;
-            lastransported = visited.back().getTransportados();
-            std::cout << lastransported << std::endl;
-            cap = visited.back().getCapacity();
-            std::cout << "current cap " << cap << std::endl;
-            trans++; //incrementa o n de transbordos
-            if (cap >= lastransported) {
-                cap = lastransported;
-            } else {
-                lastransported = cap;
-            }
         }
-        std::cout << "final cap " << cap << "   " << visited.back().getOrigin() << " -> " << visited.back().getDestination() << std::endl;
 
-        time += visited.back().getDuration();
         //armazena o valor de pessoas transportadas naquela viagem
         visited.back().setTransportados(cap);
+        time += visited.back().getDuration();
 
         if (pos == ending) {
             //std::cout << " One cicle " << std::endl;
             if(size > 0) {
-                std::cout << " Passageiros enviados: " << cap << std::endl;
+                //std::cout << " Passageiros enviados: " << cap << std::endl;
                 size -= cap;
                 if (size < 0) {
                     size = 0;
@@ -593,17 +581,14 @@ void Manager::MinDurationPath(int start, int ending, int size) { //Breadth-First
                 btrans = trans;
                 //visited.clear();
                 //output
-                std::cout << "A viagem para um grupo de tamanho definido: " << start;
+                std::cout << "Viagem de parte do grupo: " << start;
                 for (auto a: best) {
                     std::cout << " -> " << a.getDestination();
                 }
-                std::cout << " Falta transportar: " << size << std::endl;
-
-                std::cout << "A viagem com a menor duração: " << start;
-                for (auto a: best) {
-                    std::cout << " -> " << a.getDestination();
+                std::cout << " Total time: " << time << std::endl;
+                if (time > lastarrival) {
+                    lastarrival = time;
                 }
-                std::cout << " Duração: " << time << std::endl;
             }
 
             pos = myQueue.back().getOrigin();
@@ -625,8 +610,10 @@ void Manager::MinDurationPath(int start, int ending, int size) { //Breadth-First
 
     if (best.empty()) {
         std::cout << "No resutls!" << std::endl;
+    }else {
+        std::cout << " Everyone is together " << lastarrival << " seconds after leaving"<< std::endl;
     }
-*/
+
 }
 
 //----------------------------------------------------------------------------------------------------------
